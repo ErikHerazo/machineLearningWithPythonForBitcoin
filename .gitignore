@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+env.bak/
+*.egg-info/
+pip-selfcheck.json
+
+# Dataset y modelos entrenados
+data/
+models/
+
+# Logs y archivos de resultados
+logs/
+results/
+
+# Archivos de configuración
+config.ini
+
+# Notebooks de Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Archivos generados por IDEs y editores
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Otros
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log
+*.cache
+*.csv
+*.json
+*.xml
+*.html
+*.xlsx
+*.pkl
+*.h5
+*.pth
