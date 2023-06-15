@@ -16,8 +16,12 @@ class BitCoin():
         return dataFrame
 
     @classmethod
-    def saveData(cls, dataFrame):
-        csv_data = dataFrame.to_csv('machineLearning/bitCoins/data/csvData.csv', index=False)
+    def saveData(cls, parameterDictionary):
+        data_frame = parameterDictionary.get('dataFrame')
+        print("columnas:--", data_frame.columns)
+        path = parameterDictionary.get('path')
+        file_name = parameterDictionary.get('fileName')
+        csv_data = data_frame.to_csv(f"{path}/{file_name}", index=False)
         response = {
             "message": "data saved successfully",
         }
@@ -32,4 +36,13 @@ dataLoadParameters = {
 
 # 'machineLearning/bitCoins/data/dataFrame.csv'
 bitcoin_dataframe = BitCoin.yahooFinanceDataExtractor(dataLoadParameters)
-print(BitCoin.saveData(bitcoin_dataframe))
+print(bitcoin_dataframe)
+
+parameterDictionary = {
+    "dataFrame": bitcoin_dataframe,
+    "fileName": "csvData.csv",
+    "path": "machineLearning/bitCoins/data"
+}
+
+data_csv = BitCoin.saveData(parameterDictionary)
+print(data_csv)
