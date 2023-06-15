@@ -13,7 +13,6 @@ class BitCoin():
         bitcoin_data = yf.Ticker(bitcoin_symbol)
         data = bitcoin_data.history(start=parameterDictionary.get("start"),
         end=parameterDictionary.get("end"))
-        # print("columnas:--", data.columns)
         return data
 
     @classmethod
@@ -31,12 +30,12 @@ class BitCoin():
 dataLoadParameters = {
     "symbol":'BTC-USD',
     "start":"2019-01-01",
-    "end":"2023-06-15",
+    "end":"2023-06-01",
 }
 
 # 'machineLearning/bitCoins/data/dataFrame.csv'
 bitcoin_dataframe = BitCoin.yahooFinanceDataExtractor(dataLoadParameters)
-print(bitcoin_dataframe.columns[-1])
+print(bitcoin_dataframe)
 
 # parameterDictionary = {
 #     "dataFrame": bitcoin_dataframe,
