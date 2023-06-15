@@ -1,7 +1,21 @@
+# libraries for data analysis and manipulation
 pandas==1.5.3
 pandas-datareader==0.10.0
+
+# visualizaciones y gráficos en 2D y 3D
 matplotlib==3.7.1
+
+# library for numerical and scientific calculation
 numpy==1.24.2
-scikit-learn==1.2.1
-sklearn==0.0.post1
+
+# library to access and download real-time and historical financial data from Yahoo Finance
 yfinance==0.2.18
+
+# library for creating interactive charts and visualizations.
+plotly==5.14.1
+
+# library to improve the appearance of charts and visualize statistical relationships in data.
+seaborn==0.12.2
+
+# library to perform statistical analysis and data modeling.
+statsmodels==0.14.0
