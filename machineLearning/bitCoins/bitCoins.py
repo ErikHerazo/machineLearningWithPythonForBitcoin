@@ -11,14 +11,14 @@ class BitCoin():
     def yahooFinanceDataExtractor(cls, parameterDictionary):
         bitcoin_symbol = parameterDictionary.get("symbol")
         bitcoin_data = yf.Ticker(bitcoin_symbol)
-        dataFrame = bitcoin_data.history(start=parameterDictionary.get("start"),
+        data = bitcoin_data.history(start=parameterDictionary.get("start"),
         end=parameterDictionary.get("end"))
-        return dataFrame
+        # print("columnas:--", data.columns)
+        return data
 
     @classmethod
     def saveData(cls, parameterDictionary):
         data_frame = parameterDictionary.get('dataFrame')
-        print("columnas:--", data_frame.columns)
         path = parameterDictionary.get('path')
         file_name = parameterDictionary.get('fileName')
         csv_data = data_frame.to_csv(f"{path}/{file_name}", index=False)
@@ -36,13 +36,13 @@ dataLoadParameters = {
 
 # 'machineLearning/bitCoins/data/dataFrame.csv'
 bitcoin_dataframe = BitCoin.yahooFinanceDataExtractor(dataLoadParameters)
-print(bitcoin_dataframe)
+print(bitcoin_dataframe.columns[-1])
 
-parameterDictionary = {
-    "dataFrame": bitcoin_dataframe,
-    "fileName": "csvData.csv",
-    "path": "machineLearning/bitCoins/data"
-}
+# parameterDictionary = {
+#     "dataFrame": bitcoin_dataframe,
+#     "fileName": "csvData.csv",
+#     "path": "machineLearning/bitCoins/data"
+# }
 
-data_csv = BitCoin.saveData(parameterDictionary)
-print(data_csv)
+# data_csv = BitCoin.saveData(parameterDictionary)
+# print(data_csv)
