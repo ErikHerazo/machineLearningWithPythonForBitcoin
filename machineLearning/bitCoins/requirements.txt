@@ -19,3 +19,6 @@ seaborn==0.12.2
 
 # library to perform statistical analysis and data modeling.
 statsmodels==0.14.0
+
+# scraper library
+cryptocmd==0.6.1
